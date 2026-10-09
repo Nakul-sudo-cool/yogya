@@ -4,7 +4,7 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-009688.svg)](https://fastapi.tiangolo.com)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B.svg)](https://streamlit.io)
 [![Gemma 4](https://img.shields.io/badge/LLM-Gemma%204%20%7C%20LLaMA%203.2-8E24AA.svg)](https://ai.google.dev/gemma)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 > **"Zero Hallucinations in Citizen Welfare"** — An open-source, sovereign Civic Prover engine bridging the gap between dense government gazettes and citizen welfare delivery. Built for **IEEE CIS @ MSRIT Hackathon '26**.
 
@@ -164,7 +164,7 @@ Open your browser at `http://localhost:8501`.
 ---
 
 ## 📜 License
-Distributed under the **MIT License**. See `LICENSE` for more information.
+Distributed under the **Apache License, Version 2.0**. See `LICENSE` for more information.
 
 ---
 
