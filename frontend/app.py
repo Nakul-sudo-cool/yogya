@@ -8,6 +8,7 @@ import io
 import re
 import urllib.parse
 from typing import Dict, Any, List, Optional
+from pathlib import Path
 from pypdf import PdfReader
 
 # ==============================================================================
@@ -66,6 +67,7 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
         "tab_discovery": "🏛️ Pan-India Schemes & Letter Generator",
         "tab_voice": "🗣️ Multilingual Voice & Brief",
         "tab_kiosk": "🗺️ Service Centers (Kiosks)",
+        "tab_license": "📜 License (Apache 2.0)",
         # Step 1
         "s1_heading": "### 📥 Step 1: Upload & Auto-Scan Citizen Credentials",
         "s1_caption": "Upload digital Revenue Certificates, Marksheets, or Caste Declarations (PDF, JPG, PNG). Gemma 4 extracts statutory parameters with instant verification audit trail.",
@@ -156,6 +158,7 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
         "tab_discovery": "🏛️ ಪ್ಯಾನ್-ಇಂಡಿಯಾ ಯೋಜನೆಗಳು & ಪತ್ರ ರಚನೆ",
         "tab_voice": "🗣️ ಬಹುಭಾಷಾ ಧ್ವನಿ ಸಹಾಯಕ",
         "tab_kiosk": "🗺️ ನಾಗರಿಕ ಸೇವಾ ಕೇಂದ್ರಗಳು (ಗ್ರಾಮ ಒನ್)",
+        "tab_license": "📜 ಮುಕ್ತ ಪರವಾನಗಿ (Apache 2.0)",
         # Step 1
         "s1_heading": "### 📥 ಹಂತ ೧: ನಾಗರಿಕರ ದಾಖಲೆಗಳ ಅಪ್‌ಲೋಡ್ ಮತ್ತು ಸ್ವಯಂಚಾಲಿತ ಪರಿಶೀಲನೆ",
         "s1_caption": "ತಹಶೀಲ್ದಾರ್ ಆದಾಯ, ಜಾತಿ ಪ್ರಮಾಣಪತ್ರ ಅಥವಾ ಅಂಕಪಟ್ಟಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ (PDF, JPG, PNG). ಗೆಮ್ಮಾ ೪ (Gemma 4) ಸ್ವಯಂಚಾಲಿತವಾಗಿ ವಿವರಗಳನ್ನು ಹೊರತೆಗೆದು ಪರಿಶೀಲಿಸುತ್ತದೆ.",
@@ -749,7 +752,7 @@ render_header()
 # ==============================================================================
 # MAIN NAVIGATION TABS (Wizard Workflow + GovTech Suite)
 # ==============================================================================
-tab_step1, tab_step2, tab_step3, tab_step4, tab_validity, tab_discovery, tab_voice, tab_kiosk = st.tabs([
+tab_step1, tab_step2, tab_step3, tab_step4, tab_validity, tab_discovery, tab_voice, tab_kiosk, tab_license = st.tabs([
     t("tab_step1"),
     t("tab_step2"),
     t("tab_step3"),
@@ -757,7 +760,8 @@ tab_step1, tab_step2, tab_step3, tab_step4, tab_validity, tab_discovery, tab_voi
     t("tab_validity"),
     t("tab_discovery"),
     t("tab_voice"),
-    t("tab_kiosk")
+    t("tab_kiosk"),
+    t("tab_license")
 ])
 
 # ==============================================================================
@@ -1773,6 +1777,143 @@ with tab_kiosk:
     st.components.v1.html(leaflet_html, height=395)
 
 # ==============================================================================
+# TAB: APACHE 2.0 OPEN-SOURCE LICENSE & GOVTECH COMPLIANCE
+# ==============================================================================
+with tab_license:
+    is_kn = (st.session_state.get("selected_language") == "kn")
+    
+    if is_kn:
+        st.markdown("### 📜 ಮುಕ್ತ ತಂತ್ರಾಂಶ ಪರವಾನಗಿ ಮತ್ತು ನಿಯಮಾವಳಿಗಳು (Apache License 2.0)")
+        st.caption("ಯೋಗ್ಯ (CivicProver) ಅಂತರರಾಷ್ಟ್ರೀಯವಾಗಿ ಮಾನ್ಯತೆ ಪಡೆದ ಅಪಾಚೆ ಪರವಾನಗಿ ಆವೃತ್ತಿ ೨.೦ (Apache-2.0) ಅಡಿಯಲ್ಲಿ ಬಿಡುಗಡೆ ಮಾಡಲಾದ ೧೦೦% ಮುಕ್ತ ಹಾಗೂ ಸಾರ್ವಜನಿಕ ತಂತ್ರಾಂಶವಾಗಿದೆ.")
+    else:
+        st.markdown("### 📜 Open-Source Compliance & Statutory Licensing (Apache 2.0)")
+        st.caption("Yogya (CivicProver) is 100% Free and Open-Source Software released under the internationally recognized **Apache License, Version 2.0**.")
+
+    lic_col1, lic_col2, lic_col3, lic_col4 = st.columns(4)
+    with lic_col1:
+        st.metric("License Standard", "Apache 2.0")
+    with lic_col2:
+        st.metric("SPDX Identifier", "Apache-2.0")
+    with lic_col3:
+        st.metric("OSI Approved", "Yes (Jan 2004)")
+    with lic_col4:
+        st.metric("Govt & Commercial Use", "100% Permitted")
+
+    st.markdown("---")
+
+    p_col1, p_col2, p_col3 = st.columns(3)
+
+    with p_col1:
+        with st.container(border=True):
+            st.markdown("#### ✅ Permissions")
+            st.markdown("""
+            - **Commercial Deployment:** May be deployed in public governance kiosks, private enterprise portals, and citizen centers.
+            - **Modification & Forking:** Freedom to adapt rules, integrate local state schemes, and extend compilers.
+            - **Distribution:** Distribute source code, binaries, or Docker containers freely.
+            - **Sublicensing:** Grant downstream sublicenses to customized deployments.
+            - **Patent Protection:** Contributors grant an express, royalty-free patent license.
+            """)
+
+    with p_col2:
+        with st.container(border=True):
+            st.markdown("#### ⚠️ Conditions")
+            st.markdown("""
+            - **License Inclusion:** Must include a copy of the Apache 2.0 License in all distributions.
+            - **Copyright Retention:** Retain all original copyright, patent, trademark, and attribution notices.
+            - **State Changes:** Clearly state that files were modified if altering core engine logic.
+            - **Notice File:** Retain the original `NOTICE` file in derivative distributions.
+            """)
+
+    with p_col3:
+        with st.container(border=True):
+            st.markdown("#### ❌ Limitations")
+            st.markdown("""
+            - **No Trademark Rights:** Does not grant trademark rights to use 'Yogya', 'CivicProver', or creator insignias.
+            - **No Warranty:** Software is provided strictly **"AS IS"** without warranties of fitness or merchantability.
+            - **Limitation of Liability:** Contributors and authors disclaim all legal liability for damages or reliance.
+            """)
+
+    st.markdown("---")
+
+    # Project Sovereign Architecture Context
+    with st.container(border=True):
+        st.markdown("#### 🏛️ Sovereign GovTech Attribution & Open-Weight Ecosystem")
+        st.markdown("""
+        **Project Name:** Yogya (CivicProver) • Sovereign Civic Eligibility & Prover Engine  
+        **Copyright:** © 2026 Yogya (CivicProver) Contributors  
+        **Hackathon Track:** IEEE CIS @ MSRIT Hackathon '26  
+        **Upstream Technologies:** Google Gemma 4 Open Weights, FastAPI, Streamlit, IndiaStack Open Standards  
+        **Public Source Code:** [github.com/Nakul-sudo-cool/yogya-civicprover](https://github.com/Nakul-sudo-cool/yogya-civicprover)  
+        """)
+
+    st.markdown("---")
+
+    # Read License file dynamically
+    license_file_path = Path(__file__).resolve().parent.parent / "LICENSE"
+    full_license_text = ""
+    if license_file_path.exists():
+        try:
+            with open(license_file_path, "r", encoding="utf-8") as lf:
+                full_license_text = lf.read()
+        except Exception:
+            pass
+
+    if not full_license_text:
+        full_license_text = """                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   Copyright 2026 Yogya (CivicProver) Contributors
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+"""
+
+    d_col1, d_col2 = st.columns([1.5, 3])
+    with d_col1:
+        st.download_button(
+            label="📥 Download Full LICENSE (Apache-2.0.txt)",
+            data=full_license_text,
+            file_name="LICENSE",
+            mime="text/plain",
+            key="btn_download_apache_license",
+            use_container_width=True
+        )
+
+    with st.expander("📄 Verbatim Apache License, Version 2.0 Legal Text (Full 202 Lines)", expanded=True):
+        st.code(full_license_text, language="text")
+
+    st.markdown("---")
+    st.markdown("#### 📋 Developer & Citizen Department Boilerplate Notice")
+    st.caption("To apply the Apache License 2.0 to your civic extension or state adaptation, attach this header:")
+    st.code("""
+Copyright 2026 Yogya (CivicProver) Contributors
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+""", language="python")
+
+# ==============================================================================
 # STICKY VERNACULAR VOICE DICTATION ASSISTANT (Linear / IndiaStack Floating Bar)
 # ==============================================================================
 with st.sidebar:
@@ -1843,6 +1984,21 @@ with st.sidebar:
     st.markdown("### ⚙️ System Diagnostics")
     st.session_state.api_url = st.text_input("Prover API Endpoint", value=st.session_state.api_url)
     st.session_state.active_model = st.selectbox("Open-Weight LLM", ["gemma4:e4b", "llama3.2:3b", "qwen3.5:4b"], index=0)
+
+    st.markdown("---")
+    with st.expander("📜 Open Source License (Apache 2.0)", expanded=False):
+        st.markdown("""
+        **Yogya (CivicProver)** is 100% Free and Open-Source Software licensed under the **Apache License, Version 2.0**.
+        
+        - 🟢 **Commercial Use**: Allowed
+        - 🟢 **Modifications**: Allowed
+        - 🟢 **Distribution**: Allowed
+        - 🛡️ **Patent Grant**: Express
+        - ⚖️ **Warranty / Liability**: None (As-Is)
+        
+        *Copyright © 2026 Yogya Contributors.*
+        """)
+        st.caption("Inspect full terms in the **📜 License (Apache 2.0)** tab.")
 
 # ==============================================================================
 # NATIVE KANNADA LANGUAGE CONVERTER FLOATING BUTTON (Bottom-Left Anchor)
