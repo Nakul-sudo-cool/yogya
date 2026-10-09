@@ -1,0 +1,871 @@
+[
+  {
+    "scheme_id": "SSP_POST_MATRIC",
+    "scheme_name": "State Scholarship Portal (SSP) Post-Matric",
+    "department": "Social Welfare Dept, Govt of Karnataka",
+    "state": "Karnataka",
+    "portal": "https://ssp.postmatric.karnataka.gov.in",
+    "annual_benefit_inr": 25000.0,
+    "brief_eligibility": "Karnataka Domicile, Family income <= 2.5 Lakhs, Marks >= 50%",
+    "keywords": [
+      "karnataka",
+      "ssp",
+      "bengaluru",
+      "post-matric",
+      "social welfare"
+    ],
+    "rules": [
+      {
+        "clause_id": "SSP_01",
+        "rule_name": "Karnataka Domicile Requirement",
+        "source_clause": "Clause 1.2, G.O. No. SWD 246",
+        "operator": "==",
+        "field": "is_karnataka_domicile",
+        "target_value": true,
+        "description": "Applicant must be a permanent resident of Karnataka."
+      },
+      {
+        "clause_id": "SSP_02",
+        "rule_name": "Income Ceiling (<= 2.5 Lakhs)",
+        "source_clause": "Clause 3.1, Means Test Norms",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 250000.0,
+        "description": "Annual household income from all sources must not exceed INR 2,50,000."
+      },
+      {
+        "clause_id": "SSP_03",
+        "rule_name": "Qualifying Examination Marks (>= 50%)",
+        "source_clause": "Clause 4.3, Academic Progression Standards",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 50.0,
+        "description": "Candidate must secure at least 50.0% aggregate in qualifying exam."
+      },
+      {
+        "clause_id": "SSP_04",
+        "rule_name": "Verified Income Certificate",
+        "source_clause": "Section 5(a), Revenue Dept Verification",
+        "operator": "==",
+        "field": "has_income_certificate",
+        "target_value": true,
+        "description": "Must possess a valid Revenue Department RD-numbered Income Certificate."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Post+Matric+Scholarship+Karnataka"
+  },
+  {
+    "scheme_id": "YUVA_NIDHI",
+    "scheme_name": "Karnataka Yuva Nidhi Scheme",
+    "department": "Skill Development, Entrepreneurship and Livelihood Dept, Govt of Karnataka",
+    "state": "Karnataka",
+    "portal": "https://sevasindhugs.karnataka.gov.in",
+    "annual_benefit_inr": 36000.0,
+    "brief_eligibility": "Karnataka Domicile >= 6 yrs, Degree/Diploma graduate (INR 3,000/mo allowance)",
+    "keywords": [
+      "karnataka",
+      "yuva nidhi",
+      "unemployed",
+      "graduate",
+      "stipend"
+    ],
+    "rules": [
+      {
+        "clause_id": "YN_01",
+        "rule_name": "Residency Duration (>= 6 Years)",
+        "source_clause": "Clause 2.1, Yuva Nidhi Notification 2023",
+        "operator": ">=",
+        "field": "domicile_years",
+        "target_value": 6,
+        "description": "Continuous domicile in Karnataka for at least 6 years."
+      },
+      {
+        "clause_id": "YN_02",
+        "rule_name": "Recognized Degree / Diploma Completion",
+        "source_clause": "Clause 3.4, Educational Qualification",
+        "operator": "in",
+        "field": "education_level",
+        "target_value": [
+          "Undergraduate",
+          "Postgraduate"
+        ],
+        "description": "Must have graduated with an accredited degree or professional diploma."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Karnataka+Yuva+Nidhi"
+  },
+  {
+    "scheme_id": "VIDYASIRI",
+    "scheme_name": "Vidyasiri (Food & Accommodation Stipend Scheme)",
+    "department": "Backward Classes Welfare Department, Govt of Karnataka",
+    "state": "Karnataka",
+    "portal": "https://bcwd.karnataka.gov.in",
+    "annual_benefit_inr": 15000.0,
+    "brief_eligibility": "Income <= 2.5L, Non-hostel rented PG, Domicile >= 5 yrs (INR 1,500/mo)",
+    "keywords": [
+      "karnataka",
+      "vidyasiri",
+      "hostel",
+      "accommodation",
+      "food"
+    ],
+    "rules": [
+      {
+        "clause_id": "VS_01",
+        "rule_name": "Residency Duration (>= 5 Years)",
+        "source_clause": "Clause 1.3, Vidyasiri Guidelines",
+        "operator": ">=",
+        "field": "domicile_years",
+        "target_value": 5,
+        "description": "Minimum 5 years continuous domicile in Karnataka."
+      },
+      {
+        "clause_id": "VS_02",
+        "rule_name": "Income Ceiling (<= 2.5 Lakhs)",
+        "source_clause": "Clause 2.1, BCWD Norms",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 250000.0,
+        "description": "Total family annual income must not exceed INR 2,50,000."
+      },
+      {
+        "clause_id": "VS_03",
+        "rule_name": "Living Outside Government Hostel (Rented PG)",
+        "source_clause": "Clause 4.1, Food & Accommodation Criteria",
+        "operator": "==",
+        "field": "is_hostel_resident",
+        "target_value": false,
+        "description": "Candidate must stay in private rented accommodation/PG outside government hostels."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Vidyasiri+Food+Accommodation+Scheme"
+  },
+  {
+    "scheme_id": "RAITA_VIDYA_NIDHI",
+    "scheme_name": "Chief Minister Raita Vidya Nidhi",
+    "department": "Agriculture Department, Govt of Karnataka",
+    "state": "Karnataka",
+    "portal": "https://fruits.karnataka.gov.in",
+    "annual_benefit_inr": 11000.0,
+    "brief_eligibility": "Karnataka Domicile, Registered Farmer Parent in FRUITS portal (No income cap!)",
+    "keywords": [
+      "karnataka",
+      "raita",
+      "farmer",
+      "fruits",
+      "agriculture"
+    ],
+    "rules": [
+      {
+        "clause_id": "RVN_01",
+        "rule_name": "Registered Farmer Parent (FRUITS ID)",
+        "source_clause": "Clause 1.1, Agriculture Dept Order No. AGRI-2021",
+        "operator": "==",
+        "field": "is_farmer_child",
+        "target_value": true,
+        "description": "Parent must be a verified agricultural landholder with a valid FRUITS FID."
+      },
+      {
+        "clause_id": "RVN_02",
+        "rule_name": "Minimum Passing Standard (>= 40%)",
+        "source_clause": "Clause 3.2, Academic Enrolment",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 40.0,
+        "description": "Must have passed preceding qualifying examination."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Chief+Minister+Raita+Vidya+Nidhi"
+  },
+  {
+    "scheme_id": "KITTUR_RANI_CHENNAMMA",
+    "scheme_name": "Kittur Rani Chennamma Merit Scholarship for Women",
+    "department": "Collegiate Education Dept, Govt of Karnataka",
+    "state": "Karnataka",
+    "portal": "https://dce.karnataka.gov.in",
+    "annual_benefit_inr": 20000.0,
+    "brief_eligibility": "Female student in Karnataka, Marks >= 70%, Income <= 3.0L",
+    "keywords": [
+      "karnataka",
+      "women",
+      "chennamma",
+      "girls",
+      "merit"
+    ],
+    "rules": [
+      {
+        "clause_id": "KRC_01",
+        "rule_name": "Female Applicant Mandate",
+        "source_clause": "Clause 1.1, Women Empowerment Special Fellowship",
+        "operator": "==",
+        "field": "gender",
+        "target_value": "Female",
+        "description": "Exclusively open to female students enrolled in collegiate courses."
+      },
+      {
+        "clause_id": "KRC_02",
+        "rule_name": "Merit Cutoff (>= 70%)",
+        "source_clause": "Clause 2.3, Merit Standard Norms",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 70.0,
+        "description": "Minimum aggregate of 70.0% in preceding qualifying examination."
+      },
+      {
+        "clause_id": "KRC_03",
+        "rule_name": "Income Ceiling (<= 3.0 Lakhs)",
+        "source_clause": "Clause 3.1, Income Threshold",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 300000.0,
+        "description": "Total family annual income must not exceed INR 3,00,000."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Kittur+Rani+Chennamma+Scholarship"
+  },
+  {
+    "scheme_id": "AMBEDKAR_OVERSEAS",
+    "scheme_name": "Dr. B.R. Ambedkar Overseas Education Fellowship",
+    "department": "Social Welfare Department, Govt of Karnataka",
+    "state": "Karnataka",
+    "portal": "https://swd.karnataka.gov.in",
+    "annual_benefit_inr": 2000000.0,
+    "brief_eligibility": "SC/ST category in KA, Income <= 8.0L, Marks >= 60%, Domicile >= 10 yrs",
+    "keywords": [
+      "karnataka",
+      "sc",
+      "st",
+      "overseas",
+      "ambedkar",
+      "foreign"
+    ],
+    "rules": [
+      {
+        "clause_id": "AMB_01",
+        "rule_name": "SC/ST Category Exclusivity",
+        "source_clause": "Clause 1.1, Social Welfare Special Grants",
+        "operator": "in",
+        "field": "caste_category",
+        "target_value": [
+          "SC",
+          "ST"
+        ],
+        "description": "Applicant must belong to Scheduled Caste or Scheduled Tribe community."
+      },
+      {
+        "clause_id": "AMB_02",
+        "rule_name": "Income Threshold (<= 8.0 Lakhs)",
+        "source_clause": "Clause 2.2, Creamy Layer Ceiling",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 800000.0,
+        "description": "Annual household income must not exceed INR 8,00,000."
+      },
+      {
+        "clause_id": "AMB_03",
+        "rule_name": "Merit Benchmark (>= 60%)",
+        "source_clause": "Clause 3.1, Overseas Admission Benchmark",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 60.0,
+        "description": "Minimum 60.0% marks obtained in previous degree."
+      },
+      {
+        "clause_id": "AMB_04",
+        "rule_name": "Karnataka Residency (>= 10 Years)",
+        "source_clause": "Clause 4.1, Native Domicile Requirement",
+        "operator": ">=",
+        "field": "domicile_years",
+        "target_value": 10,
+        "description": "Candidate must have resided in Karnataka for at least 10 consecutive years."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Ambedkar+Overseas+Vidya+Nidhi"
+  },
+  {
+    "scheme_id": "LABOUR_WELFARE",
+    "scheme_name": "Karnataka Labour Welfare Board Educational Scholarship",
+    "department": "Karnataka Labour Welfare Board, Govt of Karnataka",
+    "state": "Karnataka",
+    "portal": "https://klwb.karnataka.gov.in",
+    "annual_benefit_inr": 15000.0,
+    "brief_eligibility": "Labour card holder child in KA, Income <= 4.2L, Marks >= 50%",
+    "keywords": [
+      "karnataka",
+      "labour",
+      "worker",
+      "welfare board"
+    ],
+    "rules": [
+      {
+        "clause_id": "KLWB_01",
+        "rule_name": "Registered Organized/Unorganized Worker Child",
+        "source_clause": "Clause 1.2, KLWB Act Section 14",
+        "operator": "==",
+        "field": "is_worker_child",
+        "target_value": true,
+        "description": "Parent must be a contributing worker registered with Labour Welfare Board."
+      },
+      {
+        "clause_id": "KLWB_02",
+        "rule_name": "Monthly Wage Cap (<= INR 35,000 /mo -> <= INR 4.2L/yr)",
+        "source_clause": "Clause 2.1, Wage Eligibility Limit",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 420000.0,
+        "description": "Parental annual earnings must not exceed INR 4,20,000."
+      },
+      {
+        "clause_id": "KLWB_03",
+        "rule_name": "Academic Pass Standard (>= 50%)",
+        "source_clause": "Clause 3.1, Scholarship Allotment Norms",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 50.0,
+        "description": "Minimum 50.0% score in last qualifying examination."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Karnataka+Labour+Welfare+Scholarship"
+  },
+  {
+    "scheme_id": "NSP_CENTRAL_SECTOR",
+    "scheme_name": "Central Sector Scheme of Scholarship (Ministry of Education, GoI)",
+    "department": "Department of Higher Education, Ministry of Education, Government of India",
+    "state": "All-India",
+    "portal": "https://scholarships.gov.in",
+    "annual_benefit_inr": 20000.0,
+    "brief_eligibility": "Income <= 4.5 Lakhs, >80th percentile in Class 12, Enrolled in recognized regular degree",
+    "keywords": [
+      "central",
+      "nsp",
+      "merit",
+      "college",
+      "degree",
+      "university",
+      "higher education",
+      "all-india"
+    ],
+    "rules": [
+      {
+        "clause_id": "NSP_01",
+        "rule_name": "National Merit Percentile Cutoff (>= 80%)",
+        "source_clause": "Clause 2.1, Board Merit Quota Guidelines",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 80.0,
+        "description": "Candidate must secure >80th percentile in relevant Class 12 Board."
+      },
+      {
+        "clause_id": "NSP_02",
+        "rule_name": "Family Income Ceiling (<= 4.5 Lakhs)",
+        "source_clause": "Clause 3.1, Central Means Norms",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 450000.0,
+        "description": "Gross annual family income from all sources must be <= INR 4,50,000."
+      },
+      {
+        "clause_id": "NSP_03",
+        "rule_name": "Regular Degree Course Enrolment",
+        "source_clause": "Clause 4.1, Course Registration",
+        "operator": "in",
+        "field": "education_level",
+        "target_value": [
+          "Undergraduate",
+          "Postgraduate"
+        ],
+        "description": "Enrolled in a recognized regular undergraduate/postgraduate degree program."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/schemes/csss"
+  },
+  {
+    "scheme_id": "PM_YASASVI",
+    "scheme_name": "PM Young Achievers Scholarship Scheme (PM-YASASVI)",
+    "department": "Ministry of Social Justice & Empowerment, Government of India",
+    "state": "All-India",
+    "portal": "https://yet.nta.ac.in",
+    "annual_benefit_inr": 75000.0,
+    "brief_eligibility": "OBC / EBC / DNT categories, Family income <= 2.5 Lakhs, Top Class School/College",
+    "keywords": [
+      "yasasvi",
+      "obc",
+      "ebc",
+      "dnt",
+      "central",
+      "all-india",
+      "school",
+      "top class"
+    ],
+    "rules": [
+      {
+        "clause_id": "YAS_01",
+        "rule_name": "Eligible Social Category (OBC/EBC/SC/ST)",
+        "source_clause": "Clause 1.2, PM-YASASVI Gazette Notification",
+        "operator": "in",
+        "field": "caste_category",
+        "target_value": [
+          "OBC",
+          "EBC",
+          "SC",
+          "ST"
+        ],
+        "description": "Applicant must belong to OBC, EBC, or designated Nomadic/Denotified communities."
+      },
+      {
+        "clause_id": "YAS_02",
+        "rule_name": "Annual Household Income Cap (<= 2.5 Lakhs)",
+        "source_clause": "Clause 2.1, Means Test Criterion",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 250000.0,
+        "description": "Total family annual income must not exceed INR 2,50,000."
+      },
+      {
+        "clause_id": "YAS_03",
+        "rule_name": "Academic Merit Threshold (>= 60%)",
+        "source_clause": "Clause 3.3, Academic Benchmark",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 60.0,
+        "description": "Minimum 60.0% marks in previous academic year."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/schemes/pm-yasasvi"
+  },
+  {
+    "scheme_id": "AICTE_PRAGATI",
+    "scheme_name": "AICTE Pragati Scholarship for Girls in Technical Education",
+    "department": "All India Council for Technical Education (AICTE), Ministry of Education, GoI",
+    "state": "All-India",
+    "portal": "https://www.aicte-india.org",
+    "annual_benefit_inr": 50000.0,
+    "brief_eligibility": "Female students admitted to 1st year technical degree/diploma (AICTE approved), Income <= 8.0 Lakhs",
+    "keywords": [
+      "aicte",
+      "pragati",
+      "girls",
+      "female",
+      "engineering",
+      "technical",
+      "diploma",
+      "btech"
+    ],
+    "rules": [
+      {
+        "clause_id": "PRAG_01",
+        "rule_name": "Female Candidate Exclusivity",
+        "source_clause": "Clause 1.1, Pragati Scheme Guidelines",
+        "operator": "==",
+        "field": "gender",
+        "target_value": "Female",
+        "description": "Scheme designated exclusively for female students in technical courses."
+      },
+      {
+        "clause_id": "PRAG_02",
+        "rule_name": "Income Ceiling (<= 8.0 Lakhs)",
+        "source_clause": "Clause 2.1, Family Income Norms",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 800000.0,
+        "description": "Annual family income must not exceed INR 8,00,000."
+      },
+      {
+        "clause_id": "PRAG_03",
+        "rule_name": "Technical Degree Enrolment",
+        "source_clause": "Clause 3.1, AICTE Approved Institutions",
+        "operator": "in",
+        "field": "education_level",
+        "target_value": [
+          "Undergraduate",
+          "Postgraduate"
+        ],
+        "description": "Enrolled in an AICTE approved technical degree program."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/schemes/pragati-scholarship-scheme"
+  },
+  {
+    "scheme_id": "MAHADBT_SCHOLARSHIP",
+    "scheme_name": "Rajarshi Chhatrapati Shahu Maharaj Shikshan Shulkh (MahaDBT)",
+    "department": "Higher & Technical Education Dept, Govt of Maharashtra",
+    "state": "Maharashtra",
+    "portal": "https://mahadbt.maharashtra.gov.in",
+    "annual_benefit_inr": 40000.0,
+    "brief_eligibility": "Maharashtra Domicile, Family Income <= 8.0 Lakhs, Marks >= 50% in qualifying exam",
+    "keywords": [
+      "mahadbt",
+      "maharashtra",
+      "shahu",
+      "mumbai",
+      "pune",
+      "ebc",
+      "marathi"
+    ],
+    "rules": [
+      {
+        "clause_id": "MHA_01",
+        "rule_name": "Maharashtra Domicile",
+        "source_clause": "Clause 1.1, State Domicile Certificate",
+        "operator": "==",
+        "field": "state_of_domicile",
+        "target_value": "Maharashtra",
+        "description": "Candidate must hold a valid Maharashtra Domicile Certificate."
+      },
+      {
+        "clause_id": "MHA_02",
+        "rule_name": "Income Threshold (<= 8.0L)",
+        "source_clause": "Clause 2.2, EBC Income Norms",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 800000.0,
+        "description": "Annual family income must be equal to or less than INR 8,00,000."
+      },
+      {
+        "clause_id": "MHA_03",
+        "rule_name": "Qualifying Pass Mark (>= 50%)",
+        "source_clause": "Clause 4.1, Minimum Aggregate",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 50.0,
+        "description": "Minimum 50.0% marks in preceding exam."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Rajarshi+Chhatrapati+Shahu+Maharaj+Fee+Reimbursement"
+  },
+  {
+    "scheme_id": "TN_PUDHUMAI_PENN",
+    "scheme_name": "Pudhumai Penn Higher Education Scheme (Moovalur Ramamirtham)",
+    "department": "Social Welfare & Women Empowerment Dept, Govt of Tamil Nadu",
+    "state": "Tamil Nadu",
+    "portal": "https://pudhumaipenn.tn.gov.in",
+    "annual_benefit_inr": 12000.0,
+    "brief_eligibility": "Female students, Tamil Nadu Domicile, Studied 6th-12th in TN Government Schools (INR 1,000/mo DBT)",
+    "keywords": [
+      "tamil nadu",
+      "pudhumai penn",
+      "moovalur",
+      "chennai",
+      "girls",
+      "govt school"
+    ],
+    "rules": [
+      {
+        "clause_id": "TN_01",
+        "rule_name": "Female Student Mandate",
+        "source_clause": "Clause 1.1, Women Higher Education Focus",
+        "operator": "==",
+        "field": "gender",
+        "target_value": "Female",
+        "description": "Designated for female college students in Tamil Nadu."
+      },
+      {
+        "clause_id": "TN_02",
+        "rule_name": "Tamil Nadu Domicile",
+        "source_clause": "Clause 2.1, State Residency",
+        "operator": "==",
+        "field": "state_of_domicile",
+        "target_value": "Tamil Nadu",
+        "description": "Candidate must be a permanent resident of Tamil Nadu."
+      },
+      {
+        "clause_id": "TN_03",
+        "rule_name": "College Degree Enrolment",
+        "source_clause": "Clause 3.1, Higher Education Course",
+        "operator": "in",
+        "field": "education_level",
+        "target_value": [
+          "Undergraduate",
+          "Postgraduate"
+        ],
+        "description": "Enrolled in regular undergraduate or postgraduate degree."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Moovalur+Ramamirtham+Ammaiyar+Pudhumai+Penn"
+  },
+  {
+    "scheme_id": "UP_POST_MATRIC",
+    "scheme_name": "UP Post-Matric Dashmottar Scholarship (Scholarship Portal)",
+    "department": "Social Welfare Department, Govt of Uttar Pradesh",
+    "state": "Uttar Pradesh",
+    "portal": "https://scholarship.up.gov.in",
+    "annual_benefit_inr": 30000.0,
+    "brief_eligibility": "UP Domicile, Family Income <= 2.5 Lakhs (SC/ST) or <= 2.0 Lakhs (General/OBC)",
+    "keywords": [
+      "uttar pradesh",
+      "up",
+      "dashmottar",
+      "lucknow",
+      "post-matric",
+      "fee reimbursement"
+    ],
+    "rules": [
+      {
+        "clause_id": "UP_01",
+        "rule_name": "Uttar Pradesh Domicile",
+        "source_clause": "Clause 1.2, UP Residence Certificate",
+        "operator": "==",
+        "field": "state_of_domicile",
+        "target_value": "Uttar Pradesh",
+        "description": "Candidate must be a permanent resident of Uttar Pradesh."
+      },
+      {
+        "clause_id": "UP_02",
+        "rule_name": "Income Threshold (<= 2.5L)",
+        "source_clause": "Clause 2.1, Family Income Ceiling",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 250000.0,
+        "description": "Annual family income must not exceed INR 2,50,000."
+      },
+      {
+        "clause_id": "UP_03",
+        "rule_name": "Passing Standard (>= 50%)",
+        "source_clause": "Clause 3.2, Minimum Qualifying Standard",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 50.0,
+        "description": "Minimum 50.0% aggregate in qualifying examinations."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=UP+Post+Matric+Scholarship"
+  },
+  {
+    "scheme_id": "WB_SWAMI_VIVEKANANDA",
+    "scheme_name": "Swami Vivekananda Merit-cum-Means Scholarship (SVMCM)",
+    "department": "Higher Education Dept, Govt of West Bengal",
+    "state": "West Bengal",
+    "portal": "https://svmcm.wbhed.gov.in",
+    "annual_benefit_inr": 18000.0,
+    "brief_eligibility": "West Bengal Domicile, Family income <= 2.5 Lakhs, Minimum 60% aggregate in qualifying exam",
+    "keywords": [
+      "west bengal",
+      "bengal",
+      "svmcm",
+      "swami vivekananda",
+      "kolkata",
+      "merit"
+    ],
+    "rules": [
+      {
+        "clause_id": "WB_01",
+        "rule_name": "West Bengal Domicile",
+        "source_clause": "Clause 1.1, WB Residency Norms",
+        "operator": "==",
+        "field": "state_of_domicile",
+        "target_value": "West Bengal",
+        "description": "Applicant must be a permanent resident of West Bengal."
+      },
+      {
+        "clause_id": "WB_02",
+        "rule_name": "Income Ceiling (<= 2.5L)",
+        "source_clause": "Clause 2.3, Family Income Criteria",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 250000.0,
+        "description": "Total family income from all sources must not exceed INR 2,50,000."
+      },
+      {
+        "clause_id": "WB_03",
+        "rule_name": "Merit Standard (>= 60%)",
+        "source_clause": "Clause 3.1, Academic Aggregate",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 60.0,
+        "description": "Minimum 60.0% marks obtained in last qualifying examination."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Swami+Vivekananda+Merit+cum+Means+Scholarship"
+  },
+  {
+    "scheme_id": "DELHI_MCM",
+    "scheme_name": "Delhi Merit-cum-Means Higher Education Grant",
+    "department": "Directorate of Higher Education, Govt of NCT of Delhi",
+    "state": "Delhi",
+    "portal": "https://edistrict.delhigovt.nic.in",
+    "annual_benefit_inr": 50000.0,
+    "brief_eligibility": "Delhi Resident, Income <= 2.5L (100% fee waiver) or <= 6.0L with Marks >= 60%",
+    "keywords": [
+      "delhi",
+      "mcm",
+      "fee waiver",
+      "capital",
+      "higher education"
+    ],
+    "rules": [
+      {
+        "clause_id": "DL_01",
+        "rule_name": "Delhi Domicile Certificate",
+        "source_clause": "Clause 1.1, Delhi State Higher Education Aid",
+        "operator": "==",
+        "field": "state_of_domicile",
+        "target_value": "Delhi",
+        "description": "Candidate must hold a valid Delhi residence certificate."
+      },
+      {
+        "clause_id": "DL_02",
+        "rule_name": "Income Ceiling (<= 6.0 Lakhs)",
+        "source_clause": "Clause 2.1, EWS & General Income Cap",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 600000.0,
+        "description": "Family income must not exceed INR 6,00,000."
+      },
+      {
+        "clause_id": "DL_03",
+        "rule_name": "Academic Qualifying Marks (>= 60%)",
+        "source_clause": "Clause 3.1, Academic Aggregate",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 60.0,
+        "description": "Minimum 60.0% marks in qualifying board/university examination."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Delhi+Higher+Education+Merit+cum+Means"
+  },
+  {
+    "scheme_id": "KERALA_PMS",
+    "scheme_name": "Kerala Post-Matric Scholarship",
+    "department": "Collegiate Education Dept, Govt of Kerala",
+    "state": "Kerala",
+    "portal": "https://dcescholarship.kerala.gov.in",
+    "annual_benefit_inr": 25000.0,
+    "brief_eligibility": "Kerala Resident, Income <= 2.5L, Marks >= 50%",
+    "keywords": [
+      "kerala",
+      "dce",
+      "malayalam",
+      "post-matric"
+    ],
+    "rules": [
+      {
+        "clause_id": "KL_01",
+        "rule_name": "Kerala Nativity Certificate",
+        "source_clause": "Clause 1.1, Kerala State Nativity Norms",
+        "operator": "==",
+        "field": "state_of_domicile",
+        "target_value": "Kerala",
+        "description": "Candidate must be a native of Kerala state."
+      },
+      {
+        "clause_id": "KL_02",
+        "rule_name": "Income Ceiling (<= 2.5 Lakhs)",
+        "source_clause": "Clause 2.1, State Family Income Ceiling",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 250000.0,
+        "description": "Annual household income must not exceed INR 2,50,000."
+      },
+      {
+        "clause_id": "KL_03",
+        "rule_name": "Qualifying Standard (>= 50%)",
+        "source_clause": "Clause 3.1, Pass Benchmark",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 50.0,
+        "description": "Minimum 50.0% marks in preceding examination."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Kerala+Post+Matric+Scholarship"
+  },
+  {
+    "scheme_id": "GUJ_MYSY",
+    "scheme_name": "Gujarat Mukhyamantri Yuva Swavalamban Yojana (MYSY)",
+    "department": "Knowledge Consortium of Gujarat, Education Dept, Govt of Gujarat",
+    "state": "Gujarat",
+    "portal": "https://mysy.guj.nic.in",
+    "annual_benefit_inr": 50000.0,
+    "brief_eligibility": "Gujarat Resident, Income <= 6.0L, Marks >= 80% percentile in 12th/Diploma",
+    "keywords": [
+      "gujarat",
+      "mysy",
+      "yuva swavalamban",
+      "ahmedabad",
+      "gandhinagar"
+    ],
+    "rules": [
+      {
+        "clause_id": "GJ_01",
+        "rule_name": "Gujarat Domicile",
+        "source_clause": "Clause 1.1, MYSY Domicile Norms",
+        "operator": "==",
+        "field": "state_of_domicile",
+        "target_value": "Gujarat",
+        "description": "Candidate must be a permanent resident of Gujarat."
+      },
+      {
+        "clause_id": "GJ_02",
+        "rule_name": "Income Ceiling (<= 6.0 Lakhs)",
+        "source_clause": "Clause 2.2, Family Income Norms",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 600000.0,
+        "description": "Family income must not exceed INR 6,00,000."
+      },
+      {
+        "clause_id": "GJ_03",
+        "rule_name": "Merit Benchmark (>= 80%)",
+        "source_clause": "Clause 3.1, High Percentile Norms",
+        "operator": ">=",
+        "field": "marks_percentage",
+        "target_value": 80.0,
+        "description": "Minimum 80.0% marks / 80 percentile in 10th/12th Board."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=Mukhyamantri+Yuva+Swavalamban+Yojana"
+  },
+  {
+    "scheme_id": "TS_AP_EPASS",
+    "scheme_name": "ePASS / Jagananna Vidya Deevena Fee Reimbursement",
+    "department": "Social Welfare & Higher Education Depts (TS / AP)",
+    "state": "Telangana / Andhra Pradesh",
+    "portal": "https://telanganaepass.cgg.gov.in",
+    "annual_benefit_inr": 35000.0,
+    "brief_eligibility": "Income <= 2.5L, Enrolled in Degree/Engineering course in TS/AP",
+    "keywords": [
+      "telangana",
+      "andhra",
+      "epass",
+      "vidya deevena",
+      "hyderabad",
+      "amaravati"
+    ],
+    "rules": [
+      {
+        "clause_id": "TSAP_01",
+        "rule_name": "Domicile Residency in TS / AP",
+        "source_clause": "Clause 1.1, ePASS Domicile Norms",
+        "operator": "in",
+        "field": "state_of_domicile",
+        "target_value": [
+          "Telangana",
+          "Andhra Pradesh",
+          "Telangana / Andhra Pradesh"
+        ],
+        "description": "Candidate must be a permanent resident of Telangana or Andhra Pradesh."
+      },
+      {
+        "clause_id": "TSAP_02",
+        "rule_name": "Income Ceiling (<= 2.5 Lakhs)",
+        "source_clause": "Clause 2.1, EWS / Caste Income Cap",
+        "operator": "<=",
+        "field": "family_income",
+        "target_value": 250000.0,
+        "description": "Total family income must not exceed INR 2,50,000."
+      },
+      {
+        "clause_id": "TSAP_03",
+        "rule_name": "College Degree Enrolment",
+        "source_clause": "Clause 3.1, Degree Registration",
+        "operator": "in",
+        "field": "education_level",
+        "target_value": [
+          "Undergraduate",
+          "Postgraduate"
+        ],
+        "description": "Candidate must be pursuing undergraduate or postgraduate higher education."
+      }
+    ],
+    "myscheme_url": "https://www.myscheme.gov.in/search?q=ePASS+Post+Matric+Scholarship"
+  }
+]
