@@ -1,12 +1,12 @@
-# 🏛️ Yogya (CivicProver) • Sovereign Civic Eligibility & Prover Engine
+# 🏛️ Yogya • Sovereign Civic Eligibility & Policy Engine
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-009688.svg)](https://fastapi.tiangolo.com)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B.svg)](https://streamlit.io)
 [![Gemma 4](https://img.shields.io/badge/LLM-Gemma%204%20%7C%20LLaMA%203.2-8E24AA.svg)](https://ai.google.dev/gemma)
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **"Zero Hallucinations in Citizen Welfare"** — An open-source, sovereign Civic Prover engine bridging the gap between dense government gazettes and citizen welfare delivery. Built for **IEEE CIS @ MSRIT Hackathon '26**.
+> **"Zero Hallucinations in Citizen Welfare"** — An open-source, sovereign civic eligibility engine bridging the gap between dense government gazettes and citizen welfare delivery. Built for **IEEE CIS @ MSRIT Hackathon '26**.
 
 ---
 
@@ -14,9 +14,9 @@
 
 Traditional LLM wrappers suffer from legal hallucinations, often misinforming vulnerable citizens about statutory welfare benefits. 
 
-**Yogya (CivicProver)** solves this with a two-tier sovereign architecture:
+**Yogya** solves this with a two-tier sovereign architecture:
 1. **Open-Weight Models as Compilers (`gemma4:e4b` / `llama3.2:3b`)**: Used strictly to translate unstructured PDF gazettes, circulars, and income certificates into a formal **Domain Specific Rule DSL**.
-2. **Deterministic Mathematical Prover Engine**: Evaluates citizen parameters against strict statutory clauses (`<=`, `>=`, `==`, `in`). Every verdict is mathematically verifiable, producing a transparent audit trail with verbatim clause citations.
+2. **Deterministic Mathematical Engine**: Evaluates citizen parameters against strict statutory clauses (`<=`, `>=`, `==`, `in`). Every verdict is mathematically verifiable, producing a transparent audit trail with verbatim clause citations.
 
 ---
 
@@ -65,7 +65,7 @@ Traditional LLM wrappers suffer from legal hallucinations, often misinforming vu
   - 🌾 *Farmer Child (CM Raita Vidya Nidhi)*
   - 🇮🇳 *National Scholar (Central NSP)*
   - 👩‍💻 *Girl in Tech (AICTE Pragati)*
-- Real-time synchronization across the mathematical prover.
+- Real-time synchronization across the mathematical engine.
 
 ### 3. ⚖️ Step 3: Verified Scheme Matches
 - Pure mathematical clause evaluation with zero hallucination guarantee.
@@ -114,8 +114,8 @@ Traditional LLM wrappers suffer from legal hallucinations, often misinforming vu
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Nakul-sudo-cool/yogya-civicprover.git
-cd yogya-civicprover
+git clone https://github.com/Nakul-sudo-cool/yogya.git
+cd yogya
 ```
 
 ### 2. Create Virtual Environment & Install Dependencies
@@ -153,7 +153,7 @@ Open your browser at `http://localhost:8501`.
 1. Push your repository to GitHub (see instructions below).
 2. Go to [share.streamlit.io](https://share.streamlit.io) and log in with your GitHub account.
 3. Click **"New App"**.
-4. Select your repository: `Nakul-sudo-cool/yogya-civicprover`.
+4. Select your repository: `Nakul-sudo-cool/yogya`.
 5. Set **Main file path** to: `frontend/app.py`.
 6. Click **"Deploy"**! You will receive a free public link (e.g. `https://yogya.streamlit.app`).
 
@@ -164,7 +164,7 @@ Open your browser at `http://localhost:8501`.
 ---
 
 ## 📜 License
-Distributed under the **Apache License, Version 2.0**. See `LICENSE` for more information.
+Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
 

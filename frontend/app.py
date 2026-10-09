@@ -15,7 +15,7 @@ from pypdf import PdfReader
 # STREAMLIT PAGE CONFIGURATION
 # ==============================================================================
 st.set_page_config(
-    page_title="Yogya (CivicProver) • Sovereign Civic Eligibility Engine",
+    page_title="Yogya • Sovereign Civic Eligibility Engine",
     page_icon="🏛️",
     layout="wide",
     initial_sidebar_state="collapsed"
@@ -57,8 +57,8 @@ EDUCATION_OPTIONS = ["10th Standard", "12th Standard / PUC", "Undergraduate", "P
 # ==============================================================================
 TRANSLATIONS: Dict[str, Dict[str, str]] = {
     "en": {
-        "app_title": "Yogya | CivicProver",
-        "app_subtitle": "Autonomous Policy-to-Rules Sovereign Civic Prover Engine",
+        "app_title": "Yogya",
+        "app_subtitle": "Autonomous Policy-to-Rules Sovereign Civic Eligibility Engine",
         "tab_step1": "📥 Step 1: Upload & Auto-Scan",
         "tab_step2": "👤 Step 2: Citizen Profile Dashboard",
         "tab_step3": "⚖️ Step 3: Verified Scheme Matches",
@@ -67,7 +67,7 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
         "tab_discovery": "🏛️ Pan-India Schemes & Letter Generator",
         "tab_voice": "🗣️ Multilingual Voice & Brief",
         "tab_kiosk": "🗺️ Service Centers (Kiosks)",
-        "tab_license": "📜 License (Apache 2.0)",
+        "tab_license": "📜 License (MIT)",
         # Step 1
         "s1_heading": "### 📥 Step 1: Upload & Auto-Scan Citizen Credentials",
         "s1_caption": "Upload digital Revenue Certificates, Marksheets, or Caste Declarations (PDF, JPG, PNG). Gemma 4 extracts statutory parameters with instant verification audit trail.",
@@ -148,7 +148,7 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
         "s3_remediation": "💡 Remediation:"
     },
     "kn": {
-        "app_title": "ಯೋಗ್ಯ (Yogya) | ಸಿವಿಕ್ ಪ್ರೂವರ್",
+        "app_title": "ಯೋಗ್ಯ (Yogya)",
         "app_subtitle": "ಸ್ವಾಯತ್ತ ನಾಗರಿಕ ಕಲ್ಯಾಣ ಯೋಜನೆಗಳ ಗಣಿತ ಪರಿಶೀಲನಾ ಎಂಜಿನ್",
         "tab_step1": "📥 ಹಂತ ೧: ದಾಖಲೆ ಅಪ್‌ಲೋಡ್ & ಸ್ಕ್ಯಾನ್",
         "tab_step2": "👤 ಹಂತ ೨: ನಾಗರಿಕ ಪ್ರೊಫೈಲ್ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
@@ -158,7 +158,7 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
         "tab_discovery": "🏛️ ಪ್ಯಾನ್-ಇಂಡಿಯಾ ಯೋಜನೆಗಳು & ಪತ್ರ ರಚನೆ",
         "tab_voice": "🗣️ ಬಹುಭಾಷಾ ಧ್ವನಿ ಸಹಾಯಕ",
         "tab_kiosk": "🗺️ ನಾಗರಿಕ ಸೇವಾ ಕೇಂದ್ರಗಳು (ಗ್ರಾಮ ಒನ್)",
-        "tab_license": "📜 ಮುಕ್ತ ಪರವಾನಗಿ (Apache 2.0)",
+        "tab_license": "📜 ಮುಕ್ತ ಪರವಾನಗಿ (MIT)",
         # Step 1
         "s1_heading": "### 📥 ಹಂತ ೧: ನಾಗರಿಕರ ದಾಖಲೆಗಳ ಅಪ್‌ಲೋಡ್ ಮತ್ತು ಸ್ವಯಂಚಾಲಿತ ಪರಿಶೀಲನೆ",
         "s1_caption": "ತಹಶೀಲ್ದಾರ್ ಆದಾಯ, ಜಾತಿ ಪ್ರಮಾಣಪತ್ರ ಅಥವಾ ಅಂಕಪಟ್ಟಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ (PDF, JPG, PNG). ಗೆಮ್ಮಾ ೪ (Gemma 4) ಸ್ವಯಂಚಾಲಿತವಾಗಿ ವಿವರಗಳನ್ನು ಹೊರತೆಗೆದು ಪರಿಶೀಲಿಸುತ್ತದೆ.",
@@ -1777,25 +1777,25 @@ with tab_kiosk:
     st.components.v1.html(leaflet_html, height=395)
 
 # ==============================================================================
-# TAB: APACHE 2.0 OPEN-SOURCE LICENSE & GOVTECH COMPLIANCE
+# TAB: MIT OPEN-SOURCE LICENSE & GOVTECH COMPLIANCE
 # ==============================================================================
 with tab_license:
     is_kn = (st.session_state.get("selected_language") == "kn")
     
     if is_kn:
-        st.markdown("### 📜 ಮುಕ್ತ ತಂತ್ರಾಂಶ ಪರವಾನಗಿ ಮತ್ತು ನಿಯಮಾವಳಿಗಳು (Apache License 2.0)")
-        st.caption("ಯೋಗ್ಯ (CivicProver) ಅಂತರರಾಷ್ಟ್ರೀಯವಾಗಿ ಮಾನ್ಯತೆ ಪಡೆದ ಅಪಾಚೆ ಪರವಾನಗಿ ಆವೃತ್ತಿ ೨.೦ (Apache-2.0) ಅಡಿಯಲ್ಲಿ ಬಿಡುಗಡೆ ಮಾಡಲಾದ ೧೦೦% ಮುಕ್ತ ಹಾಗೂ ಸಾರ್ವಜನಿಕ ತಂತ್ರಾಂಶವಾಗಿದೆ.")
+        st.markdown("### 📜 ಮುಕ್ತ ತಂತ್ರಾಂಶ ಪರವಾನಗಿ ಮತ್ತು ನಿಯಮಾವಳಿಗಳು (MIT License)")
+        st.caption("ಯೋಗ್ಯ (Yogya) ೧೦೦% ಮುಕ್ತ ಹಾಗೂ ಸಾರ್ವಜನಿಕ ತಂತ್ರಾಂಶವಾಗಿದ್ದು, ಎಂಐಟಿ (MIT) ಪರವಾನಗಿಯಡಿಯಲ್ಲಿ ಬಿಡುಗಡೆ ಮಾಡಲಾಗಿದೆ.")
     else:
-        st.markdown("### 📜 Open-Source Compliance & Statutory Licensing (Apache 2.0)")
-        st.caption("Yogya (CivicProver) is 100% Free and Open-Source Software released under the internationally recognized **Apache License, Version 2.0**.")
+        st.markdown("### 📜 Open-Source Compliance & Statutory Licensing (MIT)")
+        st.caption("Yogya is 100% Free and Open-Source Software released under the permissive **MIT License**.")
 
     lic_col1, lic_col2, lic_col3, lic_col4 = st.columns(4)
     with lic_col1:
-        st.metric("License Standard", "Apache 2.0")
+        st.metric("License Standard", "MIT License")
     with lic_col2:
-        st.metric("SPDX Identifier", "Apache-2.0")
+        st.metric("SPDX Identifier", "MIT")
     with lic_col3:
-        st.metric("OSI Approved", "Yes (Jan 2004)")
+        st.metric("OSI Approved", "Yes (1988)")
     with lic_col4:
         st.metric("Govt & Commercial Use", "100% Permitted")
 
@@ -1808,29 +1808,26 @@ with tab_license:
             st.markdown("#### ✅ Permissions")
             st.markdown("""
             - **Commercial Deployment:** May be deployed in public governance kiosks, private enterprise portals, and citizen centers.
-            - **Modification & Forking:** Freedom to adapt rules, integrate local state schemes, and extend compilers.
-            - **Distribution:** Distribute source code, binaries, or Docker containers freely.
+            - **Modification & Forking:** Freedom to modify code, adapt rules, integrate local state schemes, and extend compilers.
+            - **Distribution:** Distribute source code, binaries, or containerized images freely worldwide.
+            - **Private Use:** Free for private, institutional, research, or governmental internal use.
             - **Sublicensing:** Grant downstream sublicenses to customized deployments.
-            - **Patent Protection:** Contributors grant an express, royalty-free patent license.
             """)
 
     with p_col2:
         with st.container(border=True):
             st.markdown("#### ⚠️ Conditions")
             st.markdown("""
-            - **License Inclusion:** Must include a copy of the Apache 2.0 License in all distributions.
-            - **Copyright Retention:** Retain all original copyright, patent, trademark, and attribution notices.
-            - **State Changes:** Clearly state that files were modified if altering core engine logic.
-            - **Notice File:** Retain the original `NOTICE` file in derivative distributions.
+            - **License Inclusion:** Must include a copy of the MIT License text in all distributions or substantial portions.
+            - **Copyright Retention:** Retain the original copyright notice in all copies or derivative works.
             """)
 
     with p_col3:
         with st.container(border=True):
             st.markdown("#### ❌ Limitations")
             st.markdown("""
-            - **No Trademark Rights:** Does not grant trademark rights to use 'Yogya', 'CivicProver', or creator insignias.
-            - **No Warranty:** Software is provided strictly **"AS IS"** without warranties of fitness or merchantability.
-            - **Limitation of Liability:** Contributors and authors disclaim all legal liability for damages or reliance.
+            - **No Warranty:** Software is provided strictly **"AS IS"** without warranties of merchantability or fitness for a particular purpose.
+            - **Limitation of Liability:** In no event shall authors or copyright holders be liable for any claim, damages, or reliance.
             """)
 
     st.markdown("---")
@@ -1839,11 +1836,11 @@ with tab_license:
     with st.container(border=True):
         st.markdown("#### 🏛️ Sovereign GovTech Attribution & Open-Weight Ecosystem")
         st.markdown("""
-        **Project Name:** Yogya (CivicProver) • Sovereign Civic Eligibility & Prover Engine  
-        **Copyright:** © 2026 Yogya (CivicProver) Contributors  
+        **Project Name:** Yogya • Sovereign Civic Eligibility & Policy Engine  
+        **Copyright:** © 2026 Yogya Contributors  
         **Hackathon Track:** IEEE CIS @ MSRIT Hackathon '26  
         **Upstream Technologies:** Google Gemma 4 Open Weights, FastAPI, Streamlit, IndiaStack Open Standards  
-        **Public Source Code:** [github.com/Nakul-sudo-cool/yogya-civicprover](https://github.com/Nakul-sudo-cool/yogya-civicprover)  
+        **Public Source Code:** [github.com/Nakul-sudo-cool/yogya](https://github.com/Nakul-sudo-cool/yogya)  
         """)
 
     st.markdown("---")
@@ -1859,58 +1856,59 @@ with tab_license:
             pass
 
     if not full_license_text:
-        full_license_text = """                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+        full_license_text = """MIT License
 
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+Copyright (c) 2026 Yogya Contributors
 
-   Copyright 2026 Yogya (CivicProver) Contributors
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 """
 
     d_col1, d_col2 = st.columns([1.5, 3])
     with d_col1:
         st.download_button(
-            label="📥 Download Full LICENSE (Apache-2.0.txt)",
+            label="📥 Download Full LICENSE (MIT.txt)",
             data=full_license_text,
             file_name="LICENSE",
             mime="text/plain",
-            key="btn_download_apache_license",
+            key="btn_download_mit_license",
             use_container_width=True
         )
 
-    with st.expander("📄 Verbatim Apache License, Version 2.0 Legal Text (Full 202 Lines)", expanded=True):
+    with st.expander("📄 Verbatim MIT License Legal Text", expanded=True):
         st.code(full_license_text, language="text")
 
     st.markdown("---")
     st.markdown("#### 📋 Developer & Citizen Department Boilerplate Notice")
-    st.caption("To apply the Apache License 2.0 to your civic extension or state adaptation, attach this header:")
-    st.code("""
-Copyright 2026 Yogya (CivicProver) Contributors
+    st.caption("To apply the MIT License to your civic extension or state adaptation, attach this header:")
+    st.code("""MIT License
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Copyright (c) 2026 Yogya Contributors
 
-    http://www.apache.org/licenses/LICENSE-2.0
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 """, language="python")
 
 # ==============================================================================
@@ -1986,19 +1984,19 @@ with st.sidebar:
     st.session_state.active_model = st.selectbox("Open-Weight LLM", ["gemma4:e4b", "llama3.2:3b", "qwen3.5:4b"], index=0)
 
     st.markdown("---")
-    with st.expander("📜 Open Source License (Apache 2.0)", expanded=False):
+    with st.expander("📜 Open Source License (MIT)", expanded=False):
         st.markdown("""
-        **Yogya (CivicProver)** is 100% Free and Open-Source Software licensed under the **Apache License, Version 2.0**.
+        **Yogya** is 100% Free and Open-Source Software licensed under the **MIT License**.
         
-        - 🟢 **Commercial Use**: Allowed
-        - 🟢 **Modifications**: Allowed
-        - 🟢 **Distribution**: Allowed
-        - 🛡️ **Patent Grant**: Express
+        - 🟢 **Commercial Use**: Permitted
+        - 🟢 **Modifications**: Permitted
+        - 🟢 **Distribution**: Permitted
+        - 🟢 **Private & Govt Use**: Permitted
         - ⚖️ **Warranty / Liability**: None (As-Is)
         
         *Copyright © 2026 Yogya Contributors.*
         """)
-        st.caption("Inspect full terms in the **📜 License (Apache 2.0)** tab.")
+        st.caption("Inspect full terms in the **📜 License (MIT)** tab.")
 
 # ==============================================================================
 # NATIVE KANNADA LANGUAGE CONVERTER FLOATING BUTTON (Bottom-Left Anchor)
